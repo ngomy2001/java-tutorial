@@ -3,14 +3,16 @@ package com.tieumy.exercise;
 public class NumeralEx01 {
 
     public static int findGCD(final int a, final int b) {
-        int gcd = 1;
-
-        for (int i = 1; i <= a && i <= b; i++) {
-            if (a % i == 0 & b % i == 0) {
-                gcd = i;
+        int enteredNumber1 = a;
+        int enteredNumber2 = b;
+        while (enteredNumber1 != enteredNumber2) {
+            if (enteredNumber1 > enteredNumber2) {
+                enteredNumber1 = enteredNumber1 - enteredNumber2;
+            } else {
+                enteredNumber2 = enteredNumber2 - enteredNumber1;
             }
         }
-        return gcd;
+        return enteredNumber1;
     }
 
     public static int findLCM(final int a, final int b) {
