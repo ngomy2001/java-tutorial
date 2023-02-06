@@ -8,7 +8,8 @@ class NumeralEx05Test {
 
     @Test
     void sumOfEquidistantNumbers() {
-        assertEquals(8, NumeralEx05.sumOfEquidistantNumbers(2));
-        assertEquals(0, NumeralEx05.sumOfEquidistantNumbers(0));
+        final var sumOfInput = new NumeralEx05();
+        assertEquals(8, sumOfInput.sumOfEquidistantNumbers(2));
+        assertEquals(-1, sumOfInput.sumOfEquidistantNumbers(0));
     }
 }
