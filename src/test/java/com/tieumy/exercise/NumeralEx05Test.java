@@ -9,6 +9,6 @@ class NumeralEx05Test {
     @Test
     void sumOfEquidistantNumbers() {
         assertEquals(8, NumeralEx05.sumOfEquidistantNumbers(2));
-        assertEquals(-1, NumeralEx05.sumOfEquidistantNumbers(0));
+        assertEquals(0, NumeralEx05.sumOfEquidistantNumbers(0));
     }
 }
