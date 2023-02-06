@@ -4,7 +4,7 @@ public class NumeralEx03 {
 
     public String factorizeNumber(final int n) {
         int enteredNumber = n;
-        StringBuffer sb = new StringBuffer("");
+        StringBuffer sb = new StringBuffer();
         for (int i = 2; i <= enteredNumber; i++) {
             while (enteredNumber % i == 0) {
                 enteredNumber /= i;
