@@ -2,20 +2,20 @@ package com.tieumy.exercise;
 
 public class NumeralEx03 {
 
-    public static String factorizeNumber(final int n) {
+    public String factorizeNumber(final int n) {
         int enteredNumber = n;
-        String result = "";
+        StringBuffer sb = new StringBuffer("");
         for (int i = 2; i <= enteredNumber; i++) {
             while (enteredNumber % i == 0) {
-                enteredNumber = enteredNumber / i;
-                if (enteredNumber == 1)
-                    result = result + (i + "");
-                else
-                    result = result + (i + " * ");
+                enteredNumber /= i;
+                if (enteredNumber == 1) {
+                    sb.append(i + "");
+                } else {
+                    sb.append(i + " * ");
+                }
+
             }
-            if (enteredNumber == 1)
-                break;
         }
-        return result;
+        return sb.toString();
     }
 }
