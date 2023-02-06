@@ -2,11 +2,9 @@ package com.tieumy.exercise;
 
 public class NumeralEx05 {
 
-    public static int sumOfEquidistantNumbers(int n) {
-        int enteredNumber = n;
+    public static int sumOfEquidistantNumbers(final int n) {
         int sum = 0;
-        if (enteredNumber == 0) return -1;
-        for (int i = 1; i <= enteredNumber; i++) {
+        for (int i = 1; i <= n; i++) {
             sum += i * (i + 1);
         }
         return sum;
