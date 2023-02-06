@@ -10,6 +10,6 @@ class NumeralEx05Test {
     void sumOfEquidistantNumbers() {
         final var sumOfInput = new NumeralEx05();
         assertEquals(8, sumOfInput.sumOfEquidistantNumbers(2));
-        assertEquals(-1, sumOfInput.sumOfEquidistantNumbers(0));
+        assertEquals(0, sumOfInput.sumOfEquidistantNumbers(0));
     }
 }
