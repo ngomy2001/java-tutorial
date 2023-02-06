@@ -4,8 +4,11 @@ public class NumeralEx05 {
 
     public static int sumOfEquidistantNumbers(int n) {
         int enteredNumber = n;
+        int sum = 0;
         if (enteredNumber == 0) return -1;
-        int sum = (enteredNumber * (enteredNumber + 1) * (enteredNumber + 2)) / 3;
+        for (int i = 1; i <= enteredNumber; i++) {
+            sum += i * (i + 1);
+        }
         return sum;
     }
 }
