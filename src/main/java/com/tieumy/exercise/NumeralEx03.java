@@ -8,10 +8,9 @@ public class NumeralEx03 {
         for (int i = 2; i <= enteredNumber; i++) {
             while (enteredNumber % i == 0) {
                 enteredNumber /= i;
-                if (enteredNumber == 1) {
-                    sb.append(i + "");
-                } else {
-                    sb.append(i + " * ");
+                sb.append(i);
+                if (enteredNumber > 1) {
+                    sb.append(" * ");
                 }
 
             }
