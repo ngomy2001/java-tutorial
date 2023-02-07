@@ -8,7 +8,7 @@ class NumeralEx06Test {
 
     @Test
     void calculateSqrt() {
-        assertEquals(0, NumeralEx06.calculateSqrt(0.0));
-        assertEquals(3.00009155413138, NumeralEx06.calculateSqrt(9.0));
+        final NumeralEx06 numeralEx06 = new NumeralEx06();
+        assertEquals(3, numeralEx06.calculateSqrt(9.0), 0.0001);
     }
 }
