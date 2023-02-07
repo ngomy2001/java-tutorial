@@ -10,6 +10,6 @@ class NumeralEx06Test {
     void calculateSqrt() {
         final NumeralEx06 numeralEx06 = new NumeralEx06();
         assertEquals(3, numeralEx06.calculateSqrt(9.0), 0.0001);
-        assertEquals(3.162, numeralEx06.calculateSqrt(10), 0.0001);
+        assertEquals(3.1623, numeralEx06.calculateSqrt(10), 0.0001);
     }
 }
