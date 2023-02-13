@@ -12,10 +12,6 @@ public class StringEx04 {
                 sum += 3 * (barcode.charAt(i) - 0);
             }
         }
-        if (sum % 10 == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return sum % 10 == 0;
     }
 }
