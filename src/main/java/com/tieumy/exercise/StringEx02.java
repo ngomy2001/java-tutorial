@@ -10,7 +10,7 @@ public class StringEx02 {
         return str.toString();
     }
 
-    public boolean IsSymmertrical(final String input) {
+    public boolean isSymmertrical(final String input) {
 
         String reversedString = reverseString(input);
         if (reversedString.equals(input)) return true;
