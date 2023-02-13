@@ -8,7 +8,7 @@ public class StringEx04 {
             if (i % 2 == 0) {
                 sum += barcode.charAt(i) - 0;
             }
-            if (i % 2 != 0) {
+            else {
                 sum += 3 * (barcode.charAt(i) - 0);
             }
         }
