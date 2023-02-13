@@ -2,7 +2,8 @@ package com.tieumy.exercise;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class StringEx04Test {
 
@@ -11,9 +12,8 @@ class StringEx04Test {
         final StringEx04 stringEx04 = new StringEx04();
         String input = "8938505974194";
         String invalidInput = "8938505974193";
-        boolean valueTrue = true;
-        boolean valueFalse = false;
-        assertEquals(valueTrue, stringEx04.isValidBarcode(input));
-        assertEquals(valueFalse, stringEx04.isValidBarcode(invalidInput));
+
+        assertTrue(stringEx04.isValidBarcode(input));
+        assertFalse(stringEx04.isValidBarcode(invalidInput));
     }
 }

@@ -3,15 +3,19 @@ package com.tieumy.exercise;
 public class StringEx04 {
 
     public boolean isValidBarcode(final String barcode) {
-        char[] enteredBarcode = barcode.toCharArray();
-        int sumOfOdd = 0;
-        int sumOfEven = 0;
-        for (int i = 0; i < enteredBarcode.length; i++) {
-            if (i % 2 == 0) sumOfEven += Character.getNumericValue(enteredBarcode[i]);
-            if (i % 2 != 0) sumOfOdd += Character.getNumericValue(enteredBarcode[i]);
+        int sum = 0;
+        for (int i = 0; i < barcode.length(); i++) {
+            if (i % 2 == 0) {
+                sum += barcode.charAt(i) - 0;
+            }
+            if (i % 2 != 0) {
+                sum += 3 * (barcode.charAt(i) - 0);
+            }
         }
-
-        if ((sumOfEven + 3 * sumOfOdd) % 10 == 0) return true;
-        else return false;
+        if (sum % 10 == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
