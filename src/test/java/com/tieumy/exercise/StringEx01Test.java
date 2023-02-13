@@ -10,6 +10,8 @@ class StringEx01Test {
     void reverseString() {
         final StringEx01 stringEx01 = new StringEx01();
         String input = "Independent";
+        String input2 = "My";
         assertEquals("tnednepednI", stringEx01.reverseString(input));
+        assertEquals("yM", stringEx01.reverseString(input2));
     }
 }
