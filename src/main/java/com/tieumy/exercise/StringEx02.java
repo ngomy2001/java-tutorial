@@ -3,14 +3,11 @@ package com.tieumy.exercise;
 public class StringEx02 {
 
     public String reverseString(final String input) {
-        char[] enteredString = input.toCharArray();
-        char[] result = new char[enteredString.length];
-        int j = enteredString.length;
-        for (int i = 0; i < enteredString.length; i++) {
-            result[j - 1] = enteredString[i];
-            j--;
+        final StringBuilder str = new StringBuilder();
+        for (int i = input.length() - 1; i >= 0; i--) {
+            str.append(input.charAt(i));
         }
-        return String.valueOf(result);
+        return str.toString();
     }
 
     public boolean IsSymmertrical(final String input) {
