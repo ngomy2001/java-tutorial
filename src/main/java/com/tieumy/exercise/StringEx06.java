@@ -2,18 +2,19 @@ package com.tieumy.exercise;
 
 public class StringEx06 {
 
-    public String findVerifyNumber(final String barcode) {
-        char[] enteredBarcode = barcode.toCharArray();
-        int sumOfOdd = 0;
-        int sumOfEven = 0;
-        for (int i = 0; i < enteredBarcode.length; i++) {
-            if (i % 2 == 0) sumOfEven += Character.getNumericValue(enteredBarcode[i]);
-            if (i % 2 != 0) sumOfOdd += Character.getNumericValue(enteredBarcode[i]);
+    public int findVerifyNumber(final String barcode) {
+        int sum = 0;
+        for (int i = 0; i < barcode.length(); i++) {
+            if (i % 2 == 0) {
+                sum += barcode.charAt(i) - '0';
+            } else {
+                sum += 3 * (barcode.charAt(i) - '0');
+            }
         }
-        StringBuilder numbers = new StringBuilder();
-        for (int i = 0; i <= 9; i++) {
-            if ((sumOfOdd + i + 3 * sumOfEven) % 10 == 0) numbers.append(i);
+        if (sum % 10 == 0) {
+            return 0;
+        } else {
+            return 10 - (sum % 10);
         }
-        return numbers.toString();
     }
 }
