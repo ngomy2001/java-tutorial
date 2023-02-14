@@ -5,5 +5,5 @@ public interface Shape {
 
     double getPerimeter();
 
-    double contains();
+    boolean contains(Point point);
 }
