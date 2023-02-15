@@ -1,7 +1,11 @@
 package com.tieumy.exercise.OOP.Exercise01;
 
 public class Rectangle implements Shape {
+    private Point topRight;
+
+
     private double length;
+
     private double width;
 
     public Rectangle() {
@@ -24,7 +28,16 @@ public class Rectangle implements Shape {
         this.width = width;
     }
 
-    public Rectangle(double length, double width) {
+    public Point getTopRight() {
+        return topRight;
+    }
+
+    public void setTopRight(Point topRight) {
+        this.topRight = topRight;
+    }
+
+    public Rectangle(Point topRight, double length, double width) {
+        this.topRight = topRight;
         this.length = length;
         this.width = width;
     }
@@ -41,6 +54,17 @@ public class Rectangle implements Shape {
 
     @Override
     public boolean contains(Point point) {
-        return false;
+        Point bottomLeft = new Point();
+        bottomLeft.setX(topRight.getX() - length);
+        bottomLeft.setY(topRight.getY() - width);
+
+        if (!(point.getX() > bottomLeft.getX()) && point.getX() < topRight.getX()) {
+            return false;
+        }
+
+        if (!(point.getY() > bottomLeft.getY() && point.getY() < topRight.getY())) {
+            return false;
+        }
+        return true;
     }
 }
