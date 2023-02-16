@@ -28,14 +28,6 @@ public class Rectangle implements Shape {
         this.width = width;
     }
 
-    public Point getTopRight() {
-        return topRight;
-    }
-
-    public void setTopRight(Point topRight) {
-        this.topRight = topRight;
-    }
-
     public Rectangle(Point topRight, double length, double width) {
         this.topRight = topRight;
         this.length = length;
