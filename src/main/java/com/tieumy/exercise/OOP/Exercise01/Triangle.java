@@ -2,19 +2,21 @@ package com.tieumy.exercise.OOP.Exercise01;
 
 public class Triangle implements Shape {
 
-    private Point top;
-    private Point bottomLeft;
-    private Point bottomRight;
+    private final Point top;
+    private final Point bottomLeft;
+    private final Point bottomRight;
 
-    public Triangle() {
-
+    public Triangle(final Point top, final Point bottomLeft, final Point bottomRight) {
+        this.top = top;
+        this.bottomLeft = bottomLeft;
+        this.bottomRight = bottomRight;
     }
 
-    public double checkInsidePoint(Point pointA, Point pointB, Point pointC) {
+    public double checkInsidePoint(final Point pointA, final Point pointB, final Point pointC) {
         return (pointA.getY() - pointB.getY()) * (pointC.getX() - pointA.getX()) + (pointB.getX() - pointA.getX()) * (pointC.getY() - pointA.getY());
     }
 
-    public double calculateDistance(Point a, Point b) {
+    public double calculateDistance(final Point a, final Point b) {
         return Math.sqrt((b.getX() - a.getX()) * (b.getX() - a.getX()) + (b.getY() - a.getY()) * (b.getY() - a.getY()));
     }
 
@@ -33,7 +35,7 @@ public class Triangle implements Shape {
     }
 
     @Override
-    public boolean contains(Point point) {
+    public boolean contains(final Point point) {
         if (checkInsidePoint(top, bottomLeft, point) * checkInsidePoint(top, bottomLeft, bottomRight) < 0) {
             return false;
         }
