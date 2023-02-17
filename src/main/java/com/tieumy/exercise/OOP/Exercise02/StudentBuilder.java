@@ -3,21 +3,21 @@ package com.tieumy.exercise.OOP.Exercise02;
 import java.time.LocalDate;
 
 public interface StudentBuilder {
-    StudentBuilder firstName(String firstName);
+    StudentBuilder firstName(final String firstName);
 
-    StudentBuilder lastName(String lastName);
+    StudentBuilder lastName(final String lastName);
 
-    StudentBuilder email(String email);
+    StudentBuilder email(final String email);
 
-    StudentBuilder gender(Gender gender);
+    StudentBuilder gender(final Gender gender);
 
-    StudentBuilder birthday(LocalDate birthday);
+    StudentBuilder birthday(final LocalDate birthday);
 
-    StudentBuilder className(String className);
+    StudentBuilder className(final String className);
 
-    StudentBuilder address(String address);
+    StudentBuilder address(final String address);
 
-    StudentBuilder phone(String phone);
+    StudentBuilder phone(final String phone);
 
     Student build();
 }
