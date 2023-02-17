@@ -3,7 +3,6 @@ package com.tieumy.exercise.OOP.Exercise01;
 public class Rectangle implements Shape {
     private final Point topRight;
 
-
     private final double length;
 
     private final double width;
