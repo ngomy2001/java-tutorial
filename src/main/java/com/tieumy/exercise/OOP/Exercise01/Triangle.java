@@ -27,9 +27,9 @@ public class Triangle implements Shape {
 
     @Override
     public double getPerimeter() {
-        double leftSide = calculateDistance(bottomLeft, top);
-        double rightSide = calculateDistance(bottomRight, top);
-        double bottomSide = calculateDistance(bottomRight, bottomLeft);
+        final double leftSide = calculateDistance(bottomLeft, top);
+        final double rightSide = calculateDistance(bottomRight, top);
+        final double bottomSide = calculateDistance(bottomRight, bottomLeft);
 
         return leftSide + rightSide + bottomSide;
     }
