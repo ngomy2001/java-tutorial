@@ -29,7 +29,4 @@ class PointTest {
         assertEquals(5, c.getY());
     }
 
-    @Test
-    void setY() {
-    }
 }
