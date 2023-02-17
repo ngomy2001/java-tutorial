@@ -4,9 +4,6 @@ public class Point {
     private final double x;
     private final double y;
 
-    public Point() {
-
-    }
 
     public Point(double x, double y) {
         this.x = x;
