@@ -3,38 +3,38 @@ package com.tieumy.exercise.OOP.Exercise01;
 public class Rectangle implements Shape {
     private final Point topRight;
 
-    private final double length;
+    private final double height;
 
     private final double width;
 
 
     public double getLength() {
-        return length;
+        return height;
     }
 
     public double getWidth() {
         return width;
     }
 
-    public Rectangle(final Point topRight, final double length, final double width) {
+    public Rectangle(final Point topRight, final double height, final double width) {
         this.topRight = topRight;
-        this.length = length;
+        this.height = height;
         this.width = width;
     }
 
     @Override
     public double getArea() {
-        return length * width;
+        return height * width;
     }
 
     @Override
     public double getPerimeter() {
-        return (length + width) * 2;
+        return (height + width) * 2;
     }
 
     @Override
     public boolean contains(final Point point) {
-        final Point bottomLeft = new Point(topRight.getX() - length, topRight.getY() - width);
+        final Point bottomLeft = new Point(topRight.getX() - height, topRight.getY() - width);
 
         if (!(point.getX() > bottomLeft.getX()) && point.getX() < topRight.getX()) {
             return false;
