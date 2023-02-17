@@ -34,9 +34,7 @@ public class Rectangle implements Shape {
 
     @Override
     public boolean contains(final Point point) {
-        Point bottomLeft = new Point();
-        bottomLeft.setX(topRight.getX() - length);
-        bottomLeft.setY(topRight.getY() - width);
+        final Point bottomLeft = new Point(topRight.getX() - length, topRight.getY() - width);
 
         if (!(point.getX() > bottomLeft.getX()) && point.getX() < topRight.getX()) {
             return false;
