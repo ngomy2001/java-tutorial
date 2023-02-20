@@ -11,7 +11,6 @@ class CircleTest {
     @Test
     void getRadius() {
         assertEquals(5, circle.getRadius());
-
     }
 
     @Test
