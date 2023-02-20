@@ -44,9 +44,6 @@ public class Triangle implements Shape {
             return false;
         }
 
-        if (checkInsidePoint(bottomLeft, top, point) * checkInsidePoint(bottomLeft, top, bottomRight) < 0) {
-            return false;
-        }
-        return true;
+        return checkInsidePoint(bottomLeft, top, point) * checkInsidePoint(bottomLeft, top, bottomRight) >= 0;
     }
 }

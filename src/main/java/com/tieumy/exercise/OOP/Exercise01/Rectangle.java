@@ -36,10 +36,9 @@ public class Rectangle implements Shape {
     public boolean contains(final Point point) {
         final Point bottomLeft = new Point(topRight.getX() - height, topRight.getY() - width);
 
-        if (!(point.getX() > bottomLeft.getX()) && point.getX() < topRight.getX()) {
-            return false;
-        }
-
-        return point.getY() > bottomLeft.getY() && point.getY() < topRight.getY();
+        return point.getX() >= bottomLeft.getX() &&
+                point.getX() <= topRight.getX() &&
+                point.getY() >= bottomLeft.getY() &&
+                point.getY() <= topRight.getY();
     }
 }

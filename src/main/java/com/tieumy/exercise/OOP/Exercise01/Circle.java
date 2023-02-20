@@ -30,8 +30,8 @@ public class Circle implements Shape {
 
     @Override
     public boolean contains(final Point point) {
-        double distance = (point.getX() - center.getX()) * (point.getX() - center.getX()) + (point.getY() - center.getY()) * (point.getY() - center.getY());
-        return distance <= radius * radius;
+        final double squareDistance = (point.getX() - center.getX()) * (point.getX() - center.getX()) + (point.getY() - center.getY()) * (point.getY() - center.getY());
+        return squareDistance <= radius * radius;
     }
 
 }
