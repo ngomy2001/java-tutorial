@@ -32,14 +32,14 @@ public class Triangle implements Shape {
 
     @Override
     public boolean contains(final Point point) {
-        if (checkInsidePoint(a, b, point) * checkInsidePoint(a, b, c) < 0) {
+        if (halfSideDelta(a, b, point) * halfSideDelta(a, b, c) < 0) {
             return false;
         }
 
-        if (checkInsidePoint(a, c, point) * checkInsidePoint(a, c, b) < 0) {
+        if (halfSideDelta(a, c, point) * halfSideDelta(a, c, b) < 0) {
             return false;
         }
 
-        return checkInsidePoint(b, a, point) * checkInsidePoint(b, a, c) >= 0;
+        return halfSideDelta(b, a, point) * halfSideDelta(b, a, c) >= 0;
     }
 }
