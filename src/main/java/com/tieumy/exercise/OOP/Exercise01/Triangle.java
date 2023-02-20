@@ -12,7 +12,7 @@ public class Triangle implements Shape {
         this.c = c;
     }
 
-    public double checkInsidePoint(final Point pointA, final Point pointB, final Point pointC) {
+    public static double halfSideDelta(final Point pointA, final Point pointB, final Point pointC) {
         return (pointA.getY() - pointB.getY()) * (pointC.getX() - pointA.getX()) + (pointB.getX() - pointA.getX()) * (pointC.getY() - pointA.getY());
     }
 
