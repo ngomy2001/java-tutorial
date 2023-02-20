@@ -2,14 +2,14 @@ package com.tieumy.exercise.OOP.Exercise01;
 
 public class Triangle implements Shape {
 
-    private final Point top;
-    private final Point bottomLeft;
-    private final Point bottomRight;
+    private final Point a;
+    private final Point b;
+    private final Point c;
 
-    public Triangle(final Point top, final Point bottomLeft, final Point bottomRight) {
-        this.top = top;
-        this.bottomLeft = bottomLeft;
-        this.bottomRight = bottomRight;
+    public Triangle(final Point a, final Point b, final Point c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
     public double checkInsidePoint(final Point pointA, final Point pointB, final Point pointC) {
@@ -18,28 +18,28 @@ public class Triangle implements Shape {
 
     @Override
     public double getArea() {
-        return 0.5 * Math.abs((bottomLeft.getX() - top.getX()) * (bottomRight.getY() - top.getY()) - (bottomRight.getX() - top.getX()) * (bottomLeft.getY() - top.getY()));
+        return 0.5 * Math.abs((b.getX() - a.getX()) * (c.getY() - a.getY()) - (c.getX() - a.getX()) * (b.getY() - a.getY()));
     }
 
     @Override
     public double getPerimeter() {
-        final double leftSide = bottomLeft.distanceTo(top);
-        final double rightSide = bottomRight.distanceTo(top);
-        final double bottomSide = bottomRight.distanceTo(bottomLeft);
+        final double leftSide = b.distanceTo(a);
+        final double rightSide = c.distanceTo(a);
+        final double bottomSide = c.distanceTo(b);
 
         return leftSide + rightSide + bottomSide;
     }
 
     @Override
     public boolean contains(final Point point) {
-        if (checkInsidePoint(top, bottomLeft, point) * checkInsidePoint(top, bottomLeft, bottomRight) < 0) {
+        if (checkInsidePoint(a, b, point) * checkInsidePoint(a, b, c) < 0) {
             return false;
         }
 
-        if (checkInsidePoint(top, bottomRight, point) * checkInsidePoint(top, bottomRight, bottomLeft) < 0) {
+        if (checkInsidePoint(a, c, point) * checkInsidePoint(a, c, b) < 0) {
             return false;
         }
 
-        return checkInsidePoint(bottomLeft, top, point) * checkInsidePoint(bottomLeft, top, bottomRight) >= 0;
+        return checkInsidePoint(b, a, point) * checkInsidePoint(b, a, c) >= 0;
     }
 }
