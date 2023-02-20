@@ -17,7 +17,8 @@ public class Point {
         return y;
     }
 
-    public static double distanceTo(final Point a, final Point b) {
-        return Math.sqrt((b.getX() - a.getX()) * (b.getX() - a.getX()) + (b.getY() - a.getY()) * (b.getY() - a.getY()));
+    public double distanceTo(final Point point) {
+        double squareDistance = point.getX() - getX() * (point.getX() - getX()) + (point.getY() - getY()) * (point.getY() - getY());
+        return Math.sqrt(squareDistance);
     }
 }

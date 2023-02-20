@@ -16,10 +16,6 @@ public class Triangle implements Shape {
         return (pointA.getY() - pointB.getY()) * (pointC.getX() - pointA.getX()) + (pointB.getX() - pointA.getX()) * (pointC.getY() - pointA.getY());
     }
 
-//    public double calculateDistance(final Point a, final Point b) {
-//        return Math.sqrt((b.getX() - a.getX()) * (b.getX() - a.getX()) + (b.getY() - a.getY()) * (b.getY() - a.getY()));
-//    }
-
     @Override
     public double getArea() {
         return 0.5 * Math.abs((bottomLeft.getX() - top.getX()) * (bottomRight.getY() - top.getY()) - (bottomRight.getX() - top.getX()) * (bottomLeft.getY() - top.getY()));
@@ -27,9 +23,9 @@ public class Triangle implements Shape {
 
     @Override
     public double getPerimeter() {
-        final double leftSide = Point.distanceTo(bottomLeft, top);
-        final double rightSide = Point.distanceTo(bottomRight, top);
-        final double bottomSide = Point.distanceTo(bottomRight, bottomLeft);
+        final double leftSide = bottomLeft.distanceTo(top);
+        final double rightSide = bottomRight.distanceTo(top);
+        final double bottomSide = bottomRight.distanceTo(bottomLeft);
 
         return leftSide + rightSide + bottomSide;
     }

@@ -19,14 +19,14 @@ class PointTest {
     }
 
     @Test
-    void setX() {
-    }
-
-    @Test
     void getY() {
         assertEquals(7, a.getY());
         assertEquals(4, b.getY());
         assertEquals(5, c.getY());
     }
 
+    @Test
+    void distanceTo() {
+
+    }
 }

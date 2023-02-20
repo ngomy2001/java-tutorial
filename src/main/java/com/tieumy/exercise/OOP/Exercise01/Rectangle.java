@@ -1,6 +1,7 @@
 package com.tieumy.exercise.OOP.Exercise01;
 
 public class Rectangle implements Shape {
+
     private final Point topRight;
 
     private final double height;
@@ -16,10 +17,10 @@ public class Rectangle implements Shape {
         return width;
     }
 
-    public Rectangle(final Point topRight, final double height, final double width) {
-        this.topRight = topRight;
-        this.height = height;
+    public Rectangle(final double width, final double height, final Point topRight) {
         this.width = width;
+        this.height = height;
+        this.topRight = topRight;
     }
 
     @Override
