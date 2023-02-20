@@ -27,6 +27,10 @@ class TriangleTest {
     @Test
     void contains() {
         assertTrue(triangle.contains(new Point(4, 3)));
+        assertTrue(triangle.contains(new Point(4, -3)));
         assertFalse(triangle.contains(new Point(2, 7)));
+        assertFalse(triangle.contains(new Point(-2, 7)));
+        assertTrue(triangle.contains(new Point(-2, -5)));
+        assertFalse(triangle.contains(new Point(-10, 2)));
     }
 }
