@@ -8,17 +8,10 @@ class TriangleTest {
     final Triangle triangle = new Triangle(new Point(4, 5), new Point(2, 2), new Point(8, 2));
 
     @Test
-    void checkInsidePoint() {
-//        assertEquals(18, triangle.checkInsidePoint(new Point(4, 5), new Point(2, 2), new Point(8, 2)));
-//        assertEquals(8, triangle.checkInsidePoint(new Point(4, 5), new Point(4, 3), new Point(8, 2)));
-//        assertEquals(14, triangle.checkInsidePoint(new Point(2, 7), new Point(4, 3), new Point(8, 2)));
-    }
-
-    @Test
-    void calculateDistance() {
-//        assertEquals(5, triangle.calculateDistance(new Point(4, 5), new Point(8, 2)));
-//        assertEquals(6, triangle.calculateDistance(new Point(2, 2), new Point(8, 2)));
-//        assertEquals(3.6, triangle.calculateDistance(new Point(4, 5), new Point(2, 2)), 0.1);
+    void halfSideDelta() {
+        assertEquals(18, triangle.halfSideDelta(new Point(4, 5), new Point(2, 2), new Point(8, 2)));
+        assertEquals(8, triangle.halfSideDelta(new Point(4, 5), new Point(4, 3), new Point(8, 2)));
+        assertEquals(14, triangle.halfSideDelta(new Point(2, 7), new Point(4, 3), new Point(8, 2)));
     }
 
     @Test
