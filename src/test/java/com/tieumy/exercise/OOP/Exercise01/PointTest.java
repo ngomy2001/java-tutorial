@@ -27,6 +27,8 @@ class PointTest {
 
     @Test
     void distanceTo() {
-
+        assertEquals(3.1, a.distanceTo(b), 0.1);
+        assertEquals(6, b.distanceTo(c), 0.1);
+        assertEquals(5.3, a.distanceTo(c), 0.1);
     }
 }
