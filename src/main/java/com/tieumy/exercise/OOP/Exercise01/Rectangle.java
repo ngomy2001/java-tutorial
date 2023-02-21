@@ -1,26 +1,27 @@
 package com.tieumy.exercise.OOP.Exercise01;
 
+import static com.tieumy.exercise.OOP.Exercise01.MathUtils.isBetween;
+
 public class Rectangle implements Shape {
 
-    private final Point topRight;
+    private final Point topLeft;
 
     private final double height;
 
     private final double width;
 
+    public Rectangle(final Point topLeft, final double width, final double height) {
+        this.width = width;
+        this.height = height;
+        this.topLeft = topLeft;
+    }
 
-    public double getLength() {
+    public double getHeight() {
         return height;
     }
 
     public double getWidth() {
         return width;
-    }
-
-    public Rectangle(final double width, final double height, final Point topRight) {
-        this.width = width;
-        this.height = height;
-        this.topRight = topRight;
     }
 
     @Override
@@ -35,11 +36,7 @@ public class Rectangle implements Shape {
 
     @Override
     public boolean contains(final Point point) {
-        final Point bottomLeft = new Point(topRight.getX() - height, topRight.getY() - width);
-
-        return point.getX() >= bottomLeft.getX() &&
-                point.getX() <= topRight.getX() &&
-                point.getY() >= bottomLeft.getY() &&
-                point.getY() <= topRight.getY();
+        return isBetween(topLeft.getX(), topLeft.getX() + width, point.getX())
+                && isBetween(topLeft.getY(), topLeft.getY() + height, point.getY());
     }
 }
