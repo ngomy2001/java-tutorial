@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RectangleTest {
-    final Rectangle rectangle = new Rectangle(4, 5, new Point(2, 3));
+    final Rectangle rectangle = new Rectangle(new Point(2, 3), 4, 5);
 
     @Test
     void getLength() {
-        assertEquals(5, rectangle.getLength());
+        assertEquals(5, rectangle.getHeight());
     }
 
     @Test
